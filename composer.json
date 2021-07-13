@@ -1,0 +1,63 @@
+{
+    "name": "jetimob/portoseguro-sdk-php-laravel",
+    "description": "",
+    "keywords": ["sdk", "porto-seguro", "seguro digital", "seguro-fiança", "laravel", "php"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandre Medina",
+            "email": "ammedina@inf.ufsm.br",
+            "role": "Developer"
+        },
+        {
+            "name": "Alan",
+            "email": "hi@alanwgt.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Jetimob",
+            "email": "contato@jetimob.com",
+            "homepage": "https://jetimob.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/jetimob/portoseguro-sdk-php-laravel/issues"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Jetimob\\PortoSeguro\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jetimob\\PortoSeguro\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jetimob\\PortoSeguro\\PortoSeguroServiceProvider"
+            ],
+            "aliases": {
+                "PortoSeguro": "Jetimob\\PortoSeguro\\Facades\\PortoSeguro"
+            }
+        }
+    },
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+        "illuminate/console": "^6.0 || ^7.0 || ^8.0",
+        "illuminate/container": "^6.0 || ^7.0 || ^8.0",
+        "jetimob/http-php-laravel": "^1.2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.2",
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
