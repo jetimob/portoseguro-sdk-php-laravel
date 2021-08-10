@@ -90,4 +90,45 @@ class Oferta
         $this->coberturas = $coberturas;
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getSeguro(): ?string
+    {
+        return $this->seguro;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getNomeSeguro(): ?string
+    {
+        return $this->nomeSeguro;
+    }
+
+    /**
+     * @return Calculo|null
+     */
+    public function getCalculo(): ?Calculo
+    {
+        return $this->calculo;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFormasPagamento(): array
+    {
+        return $this->formasPagamento;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCoberturas(): array
+    {
+        return $this->coberturas;
+    }
+
 }

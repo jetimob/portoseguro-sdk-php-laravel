@@ -112,6 +112,46 @@ class Contrato
     }
 
     /**
+     * @return string
+     */
+    public function getTipoVigenciaContrato(): string
+    {
+        return $this->tipoVigenciaContrato;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInicioContrato(): string
+    {
+        return $this->inicioContrato;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFimContrato(): string
+    {
+        return $this->fimContrato;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInicioSeguro(): string
+    {
+        return $this->inicioSeguro;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFimSeguro(): string
+    {
+        return $this->fimSeguro;
+    }
+
+    /**
      * Para informar as datas use a função dateToString
      *
      * @param string $tipoVigenciaContrato

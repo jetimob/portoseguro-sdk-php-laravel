@@ -2,8 +2,12 @@
 
 namespace Jetimob\PortoSeguro\Entity;
 
+use Jetimob\Http\Traits\Serializable;
+
 class Calculo
 {
+    use Serializable;
+
     protected ?float $adicionalFracionamento;
 
     protected ?float $taxaJuros;

@@ -2,6 +2,7 @@
 
 namespace Jetimob\PortoSeguro\Entity;
 
+use Jetimob\Http\Traits\Serializable;
 use Jetimob\PortoSeguro\Exceptions\InvalidArgumentException;
 
 /**
@@ -10,6 +11,8 @@ use Jetimob\PortoSeguro\Exceptions\InvalidArgumentException;
  */
 class Pep
 {
+    use Serializable;
+
     protected string $faixaRenda;
 
     protected string $paisResidencia;
@@ -117,6 +120,54 @@ class Pep
     {
         $this->nome = $nome;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFaixaRenda(): string
+    {
+        return $this->faixaRenda;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaisResidencia(): string
+    {
+        return $this->paisResidencia;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProfissao(): string
+    {
+        return $this->profissao;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNacionalidade(): string
+    {
+        return $this->nacionalidade;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCpf(): string
+    {
+        return $this->cpf;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNome(): string
+    {
+        return $this->nome;
     }
 
     public static function new($faixaRenda, $paisResidencia, $profissao, $nacionalidade, $cpf, $nome): self

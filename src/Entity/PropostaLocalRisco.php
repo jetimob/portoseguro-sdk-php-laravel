@@ -2,6 +2,7 @@
 
 namespace Jetimob\PortoSeguro\Entity;
 
+use Jetimob\Http\Traits\Serializable;
 use Jetimob\PortoSeguro\Exceptions\InvalidArgumentException;
 
 /**
@@ -9,18 +10,14 @@ use Jetimob\PortoSeguro\Exceptions\InvalidArgumentException;
  */
 class PropostaLocalRisco
 {
+    use Serializable;
+
     protected string $tipoLogradouro;
-
     protected string $logradouro;
-
     protected string $numero;
-
     protected ?string $complemento;
-
     protected string $bairro;
-
     protected string $municipio;
-
     protected string $estado;
 
     /**

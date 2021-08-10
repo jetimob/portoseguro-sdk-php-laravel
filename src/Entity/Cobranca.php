@@ -74,6 +74,30 @@ class Cobranca
     }
 
     /**
+     * @return string
+     */
+    public function getFormaPagamento(): string
+    {
+        return $this->formaPagamento;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCondicaoPagamento(): string
+    {
+        return $this->condicaoPagamento;
+    }
+
+    /**
+     * @return CartaoCredito
+     */
+    public function getCartaoCredito(): CartaoCredito
+    {
+        return $this->cartaoCredito;
+    }
+
+    /**
      * @param $formaPagamento
      * @param $condicaoPagamento
      * @param $cartaoCredito

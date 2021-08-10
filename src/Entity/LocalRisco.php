@@ -7,7 +7,6 @@ use Jetimob\PortoSeguro\Validators\Validator;
 
 class LocalRisco extends PropostaLocalRisco
 {
-    use Serializable;
     use Validator;
 
     protected string $cep;

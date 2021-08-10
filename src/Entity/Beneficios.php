@@ -2,8 +2,12 @@
 
 namespace Jetimob\PortoSeguro\Entity;
 
+use Jetimob\Http\Traits\Serializable;
+
 class Beneficios
 {
+    use Serializable;
+
     protected ?string $descricao;
 
     protected ?string $titulo;

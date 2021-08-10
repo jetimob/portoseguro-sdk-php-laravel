@@ -67,4 +67,28 @@ class FormaPagamento
         $this->condicoesPagamento = $condicoesPagamento;
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getFormaPagamento(): ?string
+    {
+        return $this->formaPagamento;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getNomeFormaPagamento(): ?string
+    {
+        return $this->nomeFormaPagamento;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCondicoesPagamento(): array
+    {
+        return $this->condicoesPagamento;
+    }
 }
