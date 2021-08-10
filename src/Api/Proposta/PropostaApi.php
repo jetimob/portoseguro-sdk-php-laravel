@@ -10,7 +10,7 @@ class PropostaApi extends AbstractApi
     public function submeter(PropostaDTO $jsonData): PropostaResponse
     {
         return $this->mappedPut('propostas', PropostaResponse::class, [
-            RequestOptions::JSON => $jsonData
+            RequestOptions::JSON => $jsonData->toArray()
         ]);
     }
 }

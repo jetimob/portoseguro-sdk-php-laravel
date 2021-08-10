@@ -18,7 +18,7 @@ class OrcamentoApi extends AbstractApi
     public function simular(OrcamentoDTO $jsonData): OrcamentoResponse
     {
         return $this->mappedPost('orcamentos', OrcamentoResponse::class, [
-            RequestOptions::JSON => $jsonData
+            RequestOptions::JSON => $jsonData->toArray()
         ]);
     }
 }
