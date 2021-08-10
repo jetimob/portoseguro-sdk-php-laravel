@@ -10,7 +10,7 @@ use Jetimob\Http\Request;
 
 class OauthClientCredentialsTokenResolver extends HttpOAuthClientCredentialsTokenResolver
 {
-    public function issueAccessTokenRequest(OAuthClient $client, string $grantType, ?string $credentials = null): AccessToken
+    public function issueAccessTokenRequest(OAuthClient $client, string $grantType, ?string $credentials = null, ?callable $buildRequestOptions = null): AccessToken
     {
         $response = $this->http->send(new Request('post', $client->getTokenEndpoint()), [
             RequestOptions::FORM_PARAMS => [
