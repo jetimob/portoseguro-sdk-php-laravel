@@ -9,7 +9,7 @@ use Jetimob\PortoSeguro\Validators\Validator;
 /**
  * Informações referentes à forma e condição de pagamento da proposta da preferência do cliente.
  */
-class Cobranca
+class Cobranca implements FormaPagamentoDefinition
 {
     use Serializable;
     use Validator;
@@ -34,7 +34,11 @@ class Cobranca
      */
     public function setFormaPagamento(string $formaPagamento): Cobranca
     {
-        $this->validateEnum(strtoupper($formaPagamento), ['CP', 'CC', 'FAT']);
+        $this->validateEnum(strtoupper($formaPagamento), [
+            self::CARTAO_CREDITO_PORTO_SEGURO,
+            self::CARTAO_CREDITO,
+            self::FATURA_SEM_ENTRADA
+        ]);
         $this->formaPagamento = $formaPagamento;
         return $this;
     }

@@ -5,7 +5,7 @@ namespace Jetimob\PortoSeguro\Entity;
 use Jetimob\Http\Traits\Serializable;
 use Jetimob\PortoSeguro\Validators\Validator;
 
-class FormaPagamento
+class FormaPagamento implements FormaPagamentoDefinition
 {
     use Serializable;
     use Validator;
@@ -39,7 +39,11 @@ class FormaPagamento
             return $this;
         }
 
-        $this->validateEnum(strtoupper($formaPagamento), ['CP', 'CC', 'FAT']);
+        $this->validateEnum(strtoupper($formaPagamento), [
+            self::CARTAO_CREDITO_PORTO_SEGURO,
+            self::CARTAO_CREDITO,
+            self::FATURA_SEM_ENTRADA
+        ]);
         $this->formaPagamento = $formaPagamento;
         return $this;
     }
