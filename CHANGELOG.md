@@ -13,6 +13,19 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * adds missing properties in `Cobertura.php` ([490ff2c](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/490ff2c6cdf948fb9cfe651cd46730c0a70da04a))
+* adds missing property `beneficios` in `Oferta.php` ([25f57e1](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/25f57e1092d863608f89edcf3ffc40310b925ba9))
+
+## [1.1.0](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.0.2...v1.1.0) (2021-09-08)
+
+
+### Features
+
+* add payment type constants ([9d4cf68](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/9d4cf685c2e59dadf309e1cf6118ee1100b0aa9f))
+
+
+### Bug Fixes
+
+* adds missing properties in `Cobertura.php` ([490ff2c](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/490ff2c6cdf948fb9cfe651cd46730c0a70da04a))
 
 ### [1.0.2](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.0.1...v1.0.2) (2021-08-10)
 
