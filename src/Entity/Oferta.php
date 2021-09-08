@@ -18,6 +18,8 @@ class Oferta
 
     protected array $coberturas;
 
+    protected array $beneficios;
+
     public function formasPagamentoItemType(): string
     {
         return FormaPagamento::class;
@@ -26,6 +28,11 @@ class Oferta
     public function coberturasItemType(): string
     {
         return Cobertura::class;
+    }
+
+    public function beneficiosItemType(): string
+    {
+        return Beneficios::class;
     }
 
     /**
@@ -131,4 +138,22 @@ class Oferta
         return $this->coberturas;
     }
 
+    /**
+     * @return array
+     */
+    public function getBeneficios(): array
+    {
+        return $this->beneficios;
+    }
+
+    /**
+     * @param array $beneficios
+     *
+     * @return Oferta
+     */
+    public function setBeneficios(array $beneficios): Oferta
+    {
+        $this->beneficios = $beneficios;
+        return $this;
+    }
 }
