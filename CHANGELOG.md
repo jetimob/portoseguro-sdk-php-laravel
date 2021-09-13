@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.1.0...v1.1.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* adiciona constantes com os tipos de logradouros validos ([7877a51](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/7877a515d904892385de7471651c5ceb2993779b))
+* adiciona os getters em `PropostaResponse.php` ([5929498](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/5929498808b4754e2d92d1ba67767320dd98c639))
+* torna o atributo $cartaoCredito nullable em `Cobranca.php` ([6ea4b1a](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/6ea4b1a37a03c297a2aed5ddc9f80ec810a5b6f1))
+
 ## [1.1.0](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.0.2...v1.1.0) (2021-09-08)
 
 
