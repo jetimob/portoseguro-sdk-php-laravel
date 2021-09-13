@@ -18,7 +18,7 @@ class Cobranca implements FormaPagamentoDefinition
 
     protected string $condicaoPagamento;
 
-    protected CartaoCredito $cartaoCredito;
+    protected ?CartaoCredito $cartaoCredito;
 
     /**
      *
@@ -68,10 +68,11 @@ class Cobranca implements FormaPagamentoDefinition
     }
 
     /**
-     * @param CartaoCredito $cartaoCredito
+     * @param CartaoCredito|null $cartaoCredito
+     *
      * @return Cobranca
      */
-    public function setCartaoCredito(CartaoCredito $cartaoCredito): Cobranca
+    public function setCartaoCredito(?CartaoCredito $cartaoCredito = null): Cobranca
     {
         $this->cartaoCredito = $cartaoCredito;
         return $this;
@@ -107,7 +108,7 @@ class Cobranca implements FormaPagamentoDefinition
      * @param $cartaoCredito
      * @return static
      */
-    public static function new($formaPagamento, $condicaoPagamento, $cartaoCredito): self
+    public static function new($formaPagamento, $condicaoPagamento, $cartaoCredito = null): self
     {
         return (new static())
             ->setFormaPagamento($formaPagamento)
