@@ -62,7 +62,7 @@ return [
         */
 
         'guzzle' => [
-            'base_uri' => 'https://portoapi-hml.portoseguro.com.br/api-gateway/fianca-locaticia/emissao/aluguel-essencial/v1/',
+            'base_uri' => 'https://portoapicloud-hml.portoseguro.com.br/fianca-locaticia/emissao/aluguel-essencial/v1/',
 
             /*
             |--------------------------------------------------------------------------
@@ -169,7 +169,7 @@ return [
                 \Jetimob\PortoSeguro\Api\Authorization\OauthClientCredentialsTokenResolver::class,
         ],
 
-        'oauth_authorization_uri' => 'https://portoapi-sandbox.portoseguro.com.br/api-gateway/oauth/v2/',
-        'oauth_token_uri' => 'https://portoapi-sandbox.portoseguro.com.br/api-gateway/oauth/v2/access-token',
+        'oauth_authorization_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/',
+        'oauth_token_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/access-token',
     ],
 ];
