@@ -6,6 +6,7 @@ use Jetimob\Http\Traits\Serializable;
 use Jetimob\PortoSeguro\Entity\Contrato;
 use Jetimob\PortoSeguro\Entity\OrcamentoCobertura;
 use Jetimob\PortoSeguro\Entity\OrcamentoLocatario;
+use Jetimob\PortoSeguro\Entity\PropostaLocalRisco;
 
 class OrcamentoDTO implements \JsonSerializable
 {
@@ -26,6 +27,8 @@ class OrcamentoDTO implements \JsonSerializable
     protected array $coberturas;
 
     protected Contrato $contrato;
+
+    protected PropostaLocalRisco $localRisco;
 
     protected function locatariosItemType(): string
     {
@@ -122,6 +125,25 @@ class OrcamentoDTO implements \JsonSerializable
     public function setContrato(Contrato $contrato): OrcamentoDTO
     {
         $this->contrato = $contrato;
+        return $this;
+    }
+
+    /**
+     * @return PropostaLocalRisco
+     */
+    public function getLocalRisco(): PropostaLocalRisco
+    {
+        return $this->localRisco;
+    }
+
+    /**
+     * @param PropostaLocalRisco $localRisco
+     *
+     * @return OrcamentoDTO
+     */
+    public function setLocalRisco(PropostaLocalRisco $localRisco): OrcamentoDTO
+    {
+        $this->localRisco = $localRisco;
         return $this;
     }
 }
