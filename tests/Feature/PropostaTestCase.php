@@ -10,6 +10,7 @@ use Jetimob\PortoSeguro\Entity\Cobranca;
 use Jetimob\PortoSeguro\Entity\Endereco;
 use Jetimob\PortoSeguro\Entity\Locador;
 use Jetimob\PortoSeguro\Entity\Pep;
+use Jetimob\PortoSeguro\Entity\PropostaLocalRisco;
 use Jetimob\PortoSeguro\Entity\PropostaLocatario;
 use Jetimob\PortoSeguro\Exceptions\PortoSeguroRequestException;
 use Jetimob\PortoSeguro\Facades\PortoSeguro;
@@ -37,7 +38,7 @@ class PropostaTestCase extends TestCase
             '40352092017',
             'tYNSkPmVlY6UPLih0AtBiw=='
         );
-        $cobranca = Cobranca::new('CC', '000', $cartaoCredito);
+        $cobranca = Cobranca::new('FAT', '012');
         $endereco = (new Endereco())
             ->setCep('09781220')
             ->setTipoLogradouro('R')
@@ -46,7 +47,9 @@ class PropostaTestCase extends TestCase
             ->setComplemento('Bl 21 apto 42')
             ->setBairro('FERRAZÓPOLIS')
             ->setMunicipio('SAO BERNARDO DO CAMPO')
-            ->setEstado('SP');
+            ->setEstado('SP')
+            ->setPais('Brasil')
+            ->setCodigoPais('01058');
         $pep = Pep::new('001', '01058', '2323A', '001', '38543443415', 'Ulysses Guimarães');
 
         $locador = (new Locador())
@@ -76,12 +79,23 @@ class PropostaTestCase extends TestCase
             ->setPep($pep);
 
         return (new PropostaDTO())
-            ->setOrcamento('000000010008275')
-            ->setOrcamentoExterno('SD3lo43.5565865A/JDI7-36')
+            ->setSeguro('0001')
             ->setEmissao('S')
             ->setCobranca($cobranca)
             ->setLocador($locador)
-            ->setLocatarios([$locatario]);
+            ->setLocatarios([$locatario])
+            ->setLocalRisco((new PropostaLocalRisco())
+                ->setTipoLogradouro('R')
+                ->setLogradouro('Rua Appel')
+                ->setNumero('347')
+                ->setBairro('Nossa Sra. de Fátima')
+                ->setMunicipio('Santa Maria')
+                ->setEstado('RS')
+                ->setPais('Brasil')
+                ->setCodigoPais('01058')
+                ->setCep('97015030')
+            )
+            ->setOrcamento('000000010340479');
     }
 
     /** @test */
@@ -90,7 +104,6 @@ class PropostaTestCase extends TestCase
         try {
             $response = $this->api->submeter($this->getMinimumRequest());
             $this->assertInstanceOf(PropostaResponse::class, $response);
-            dump($response);
         } catch (PortoSeguroRequestException $exception) {
             dump($exception->getError(), $exception->getCode());
         }

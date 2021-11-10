@@ -8,6 +8,7 @@ use Jetimob\PortoSeguro\Api\Orcamento\OrcamentoResponse;
 use Jetimob\PortoSeguro\Entity\Cobertura;
 use Jetimob\PortoSeguro\Entity\Contrato;
 use Jetimob\PortoSeguro\Entity\OrcamentoLocatario;
+use Jetimob\PortoSeguro\Entity\PropostaLocalRisco;
 use Jetimob\PortoSeguro\Exceptions\PortoSeguroRequestException;
 use Jetimob\PortoSeguro\Facades\PortoSeguro;
 use Jetimob\PortoSeguro\Tests\TestCase;
@@ -25,7 +26,7 @@ class OrcamentoTestCase extends TestCase
     protected function getMinimumRequest(): OrcamentoDTO
     {
         $locatario = OrcamentoLocatario::new('S', '20489072887');
-        $cobertura = Cobertura::new('001', 200.85);
+        $cobertura = Cobertura::new('001', 2000.85);
 
         $currentDay = date('d');
         $currentMonth = date('m');
@@ -42,10 +43,20 @@ class OrcamentoTestCase extends TestCase
 
         return (new OrcamentoDTO())
             ->setSusep('TST01J')
-            ->setOrcamentoExterno('SD3lo43.5565865A/JDI7-36')
             ->setCpfCotador('02033008231')
             ->setImobiliaria('000001')
-            ->setCep('02013000')
+            ->setCep('97015030')
+            ->setLocalRisco((new PropostaLocalRisco())
+                ->setTipoLogradouro('R')
+                ->setLogradouro('Rua Appel')
+                ->setNumero('347')
+                ->setBairro('Nossa Sra. de Fátima')
+                ->setMunicipio('Santa Maria')
+                ->setEstado('RS')
+                ->setPais('Brasil')
+                ->setCodigoPais('01058')
+                ->setCep('97015030')
+            )
             ->setLocatarios([$locatario])
             ->setCoberturas([$cobertura])
             ->setContrato($contrato);
