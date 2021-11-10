@@ -65,6 +65,9 @@ class PropostaLocalRisco
     protected string $bairro;
     protected string $municipio;
     protected string $estado;
+    protected string $pais;
+    protected string $codigoPais;
+    protected string $cep;
 
     /**
      * @return string
@@ -285,6 +288,63 @@ class PropostaLocalRisco
         $estado = strtoupper($estado);
 
         $this->estado = $estado;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPais(): string
+    {
+        return $this->pais;
+    }
+
+    /**
+     * @param string $pais
+     *
+     * @return PropostaLocalRisco
+     */
+    public function setPais(string $pais): PropostaLocalRisco
+    {
+        $this->pais = $pais;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodigoPais(): string
+    {
+        return $this->codigoPais;
+    }
+
+    /**
+     * @param string $codigoPais
+     *
+     * @return PropostaLocalRisco
+     */
+    public function setCodigoPais(string $codigoPais): PropostaLocalRisco
+    {
+        $this->codigoPais = $codigoPais;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCep(): string
+    {
+        return $this->cep;
+    }
+
+    /**
+     * @param string $cep
+     *
+     * @return PropostaLocalRisco
+     */
+    public function setCep(string $cep): PropostaLocalRisco
+    {
+        $this->cep = $cep;
         return $this;
     }
 
