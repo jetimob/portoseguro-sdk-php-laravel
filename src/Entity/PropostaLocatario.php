@@ -215,9 +215,9 @@ class PropostaLocatario
     /**
      * @param string|null $telefoneResidencial
      *
-     * @return Locador
+     * @return PropostaLocatario
      */
-    public function setTelefoneResidencial(?string $telefoneResidencial): Locador
+    public function setTelefoneResidencial(?string $telefoneResidencial): PropostaLocatario
     {
         $this->telefoneResidencial = $telefoneResidencial;
         return $this;
