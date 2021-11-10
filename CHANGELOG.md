@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.1.1...v1.2.0) (2021-11-10)
+
+
+### Features
+
+* adiciona campos `pais` dentro do modelo de `PropostaLocalRisco` ([5cb1111](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/5cb111172bb6ea3bb4d1cdfe7fcfaf6a60035fb5))
+* adiciona localRisco em `OrcamentoDTO` ([026a4f7](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/026a4f7f05f889772a1fd8fed1f0ff640573a564))
+
+
+### Bug Fixes
+
+* atualiza  uri base do servidor de testes da Porto Seguro ([84cbaa0](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/84cbaa03c1ff92e5a72ef91a8870af27d51b6ecc))
+* corrige retorno do setter de telefone residencial ([fe04eaa](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/fe04eaa307f67e011cfead71d70dad6f9a1dc635))
+
 ### [1.1.1](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.1.0...v1.1.1) (2021-09-13)
 
 
