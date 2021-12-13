@@ -1,7 +1,20 @@
 <?php
 
+$endpoints = [
+    'sandbox' => [
+        'base_uri' => 'https://portoapicloud-hml.portoseguro.com.br/fianca-locaticia/emissao/aluguel-essencial/v1/',
+        'oauth_authorization_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/',
+        'oauth_token_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/access-token',
+    ],
+    'production' => [
+        'base_uri' => 'https://portoapi.portoseguro.com.br/fianca-locaticia/emissao/aluguel-essencial/v1/',
+        'oauth_authorization_uri' => 'https://portoapi.portoseguro.com.br/oauth/v2/',
+        'oauth_token_uri' => 'https://portoapi.portoseguro.com.br/oauth/v2/access-token',
+    ],
+];
+
 return [
-    'resource_token' => env(''),
+    'resource_token' => '',
 
     'http' => [
         /*
@@ -62,7 +75,7 @@ return [
         */
 
         'guzzle' => [
-            'base_uri' => 'https://portoapicloud-hml.portoseguro.com.br/fianca-locaticia/emissao/aluguel-essencial/v1/',
+            'base_uri' => $endpoints[env('PORTOSEGURO_ENVIRONMENT', 'sandbox')]['base_uri'],
 
             /*
             |--------------------------------------------------------------------------
@@ -169,7 +182,7 @@ return [
                 \Jetimob\PortoSeguro\Api\Authorization\OauthClientCredentialsTokenResolver::class,
         ],
 
-        'oauth_authorization_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/',
-        'oauth_token_uri' => 'https://portoapicloud-hml.portoseguro.com.br/oauth/v2/access-token',
+        'oauth_authorization_uri' => $endpoints[env('PORTOSEGURO_ENVIRONMENT', 'sandbox')]['oauth_authorization_uri'],
+        'oauth_token_uri' => $endpoints[env('PORTOSEGURO_ENVIRONMENT', 'sandbox')]['oauth_token_uri'],
     ],
 ];

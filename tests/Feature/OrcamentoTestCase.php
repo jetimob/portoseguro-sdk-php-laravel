@@ -25,8 +25,8 @@ class OrcamentoTestCase extends TestCase
 
     protected function getMinimumRequest(): OrcamentoDTO
     {
-        $locatario = OrcamentoLocatario::new('S', '20489072887');
-        $cobertura = Cobertura::new('001', 2000.85);
+        $locatario = OrcamentoLocatario::new('S', '58874739672');
+        $cobertura = Cobertura::new('001', 2007.00);
 
         $currentDay = date('d');
         $currentMonth = date('m');
@@ -48,14 +48,14 @@ class OrcamentoTestCase extends TestCase
             ->setCep('97015030')
             ->setLocalRisco((new PropostaLocalRisco())
                 ->setTipoLogradouro('R')
-                ->setLogradouro('Rua Appel')
-                ->setNumero('347')
-                ->setBairro('Nossa Sra. de Fátima')
-                ->setMunicipio('Santa Maria')
-                ->setEstado('RS')
+                ->setLogradouro('Alameda Santos 1800')
+                ->setNumero('14401')
+                ->setBairro('Cerqueira César')
+                ->setMunicipio('São Paulo')
+                ->setEstado('SP')
                 ->setPais('Brasil')
                 ->setCodigoPais('01058')
-                ->setCep('97015030')
+                ->setCep('01418904')
             )
             ->setLocatarios([$locatario])
             ->setCoberturas([$cobertura])
