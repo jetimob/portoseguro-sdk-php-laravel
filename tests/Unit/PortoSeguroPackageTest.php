@@ -16,14 +16,14 @@ class PortoSeguroPackageTest extends TestCase
         }
     }
 
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
         $this->configPath = config_path('portoseguro.php');
         $this->cleanUp();
     }
 
-    protected function tearDown(): void
+    public function tearDown(): void
     {
         parent::tearDown();
         $this->cleanUp();
