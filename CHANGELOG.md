@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.3.2...v1.3.3) (2022-08-23)
+
+
+### Bug Fixes
+
+* altera o tipo de do método 'setUp' para o formato da classe estendida ([ab9620c](https://github.com/jetimob/portoseguro-sdk-php-laravel/commit/ab9620c10f034e607f9387c35265f71d39cfa4e5))
+
 ### [1.3.2](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.3.1...v1.3.2) (2022-04-13)
 
 ### [1.3.1](https://github.com/jetimob/portoseguro-sdk-php-laravel/compare/v1.3.0...v1.3.1) (2021-12-14)
